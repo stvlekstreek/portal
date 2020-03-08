@@ -1,4 +1,4 @@
-package community.flock.eco.fundraising.configuration
+package nl.stvlekstreek.portal.configuration
 
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.core.io.ClassPathResource

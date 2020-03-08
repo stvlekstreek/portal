@@ -1,7 +1,8 @@
-package community.flock.eco.fundraising
+package nl.stvlekstreek.portal
 
-import community.flock.eco.fundraising.configuration.WebMvcConfig
-import community.flock.eco.fundraising.configuration.WebSecurityConfig
+
+import nl.stvlekstreek.portal.configuration.WebMvcConfig
+import nl.stvlekstreek.portal.configuration.WebSecurityConfig
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.autoconfigure.data.rest.RepositoryRestMvcAutoConfiguration

@@ -1,4 +1,4 @@
-package community.flock.eco.fundraising.services
+package nl.stvlekstreek.portal.services
 
 import community.flock.eco.feature.member.model.Member
 import community.flock.eco.feature.member.model.MemberField
@@ -12,20 +12,18 @@ class MemberFieldService(
         private val memberFieldRepository: MemberFieldRepository
 ) {
 
-    enum class MemberFields(val key: String, val label: String, val type: MemberFieldType, val disabled: Boolean, val options: SortedSet<String> = sortedSetOf()) {
-        AGREED_ON_TERMS("agreed_on_terms", "Agreed on terms", MemberFieldType.CHECKBOX, true),
-        NEWSLETTER("newsletter", "Newsletter", MemberFieldType.CHECKBOX, true),
-        TRANSACTIONAL_MAIL("transactional_email", "Transactional email", MemberFieldType.CHECKBOX, true),
-        MAILCHIMP_STATUS("mailchimp_status", "Mailchimp status", MemberFieldType.SINGLE_SELECT, true, sortedSetOf("SUBSCRIBED", "UNSUBSCRIBED", "CLEANED", "PENDING","TRANSACTIONAL")),
-        TERMINATION_REASON("termination_reason", "Termination reason", MemberFieldType.SINGLE_SELECT, true, sortedSetOf("Reason 1", "Reason 2", "Reason 3"))
+    enum class MemberFields(val label: String, val type: MemberFieldType, val disabled: Boolean = false, val options: SortedSet<String> = sortedSetOf()) {
+        COMPETITION_NUMBER("Competition number", MemberFieldType.TEXT),
+        LICENSE_NUMBER("License number", MemberFieldType.TEXT),
+        SPEEDSKATING_RESULTS_ID("Speedskating results id", MemberFieldType.TEXT),
     }
 
     fun init() {
         MemberFields.values()
-                .filter { !memberFieldRepository.findByName(it.key).isPresent }
+                .filter { !memberFieldRepository.findByName(it.key()).isPresent }
                 .map {
                     MemberField(
-                            name = it.key,
+                            name = it.key(),
                             label = it.label,
                             type = it.type,
                             disabled = it.disabled,
@@ -35,6 +33,9 @@ class MemberFieldService(
                 .let { memberFieldRepository.saveAll(it) }
     }
 
+
+
 }
 
-fun Member.getFieldValue(field: MemberFieldService.MemberFields) = this.fields[field.key]
+fun Member.getFieldValue(field: MemberFieldService.MemberFields) = this.fields[field.key()]
+fun MemberFieldService.MemberFields.key() = this.name.toLowerCase()

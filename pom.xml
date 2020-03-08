@@ -6,11 +6,11 @@
     <parent>
         <artifactId>flock-eco-application-parent</artifactId>
         <groupId>com.github.flock-community.flock-eco</groupId>
-        <version>1.6.4</version>
+        <version>1.6.6</version>
     </parent>
 
-    <groupId>flock.community.eco.fundraising</groupId>
-    <artifactId>flock-eco-fundraising</artifactId>
+    <groupId>nl.stvlekstreek</groupId>
+    <artifactId>stvlekstreek-portal</artifactId>
     <version>develop-SNAPSHOT</version>
 
     <properties>
@@ -90,19 +90,6 @@
         <dependency>
             <groupId>com.github.flock-community.flock-eco</groupId>
             <artifactId>flock-eco-feature-member</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.github.flock-community.flock-eco</groupId>
-            <artifactId>flock-eco-feature-payment</artifactId>
-            <version>1.4.16</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.flock-community.flock-eco</groupId>
-            <artifactId>flock-eco-feature-mailchimp</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.github.flock-community.flock-eco</groupId>
-            <artifactId>flock-eco-feature-gcp-runtimeconfig</artifactId>
         </dependency>
 
         <dependency>

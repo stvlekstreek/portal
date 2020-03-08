@@ -12,7 +12,5 @@ import org.springframework.context.annotation.Import
 @ConditionalOnProperty("flock.fundraising.load-data.enabled")
 @Import(
         MemberLoadData::class,
-        PaymentLoadData::class,
-        ExcelLoadData::class,
         UserLoadData::class)
 class LoadDateConfig

@@ -1,8 +1,7 @@
-package community.flock.eco.fundraising.configuration
+package nl.stvlekstreek.portal.configuration
 
 import community.flock.eco.feature.user.services.UserAuthorityService
 import community.flock.eco.feature.user.services.UserSecurityService
-import community.flock.eco.fundraising.authorities.DonationsAuthority
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Configuration
 import org.springframework.core.env.Environment
@@ -29,8 +28,6 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
     lateinit var userSecurityService: UserSecurityService
 
     override fun configure(http: HttpSecurity) {
-
-        userAuthorityService.addAuthority(DonationsAuthority::class.java)
 
         http
                 .headers().frameOptions().sameOrigin()

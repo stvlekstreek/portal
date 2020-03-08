@@ -1,4 +1,4 @@
-package community.flock.eco.fundraising
+package nl.stvlekstreek.portal
 
 import community.flock.eco.feature.user.repositories.UserRepository
 import community.flock.eco.fundraising.data.ExcelLoadData
@@ -12,7 +12,8 @@ import org.springframework.context.annotation.Import
 
 @EnableAutoConfiguration(exclude = [WebMvcAutoConfiguration::class])
 @Import(ApplicationConfiguration::class)
-class ApplicationLoadData : CommandLineRunner {
+class
+ApplicationLoadData : CommandLineRunner {
 
     @Autowired
     lateinit var userRepository: UserRepository

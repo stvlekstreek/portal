@@ -4,11 +4,6 @@ import {HashRouter, Redirect, Route} from 'react-router-dom'
 
 import AppLayout from './AppLayout'
 
-import DashboardFeature from '../dashboard/DashboardFeature'
-import DonationFeature from '../donation/DonationFeature'
-import MailchimpFeature from '../mailchimp/MailchimpFeature'
-import TransactionFeature from '../transaction/TransactionFeature'
-
 import MemberFeature from '@flock-eco/feature-member/src/main/react/member/MemberFeature'
 import {UserFeature} from '@flock-eco/feature-user/src/main/react/user/UserFeature'
 
@@ -71,24 +66,8 @@ class App extends React.Component {
             <Redirect to="/dashboard"/>
           )}/>
 
-          <Route path='/dashboard' exact render={(props) => (
-            <DashboardFeature/>
-          )}/>
-
           <Route path='/members' exact render={(props) => (
             <MemberFeature/>
-          )}/>
-
-          <Route path='/donations' exact render={(props) => (
-            <DonationFeature/>
-          )}/>
-
-          <Route path='/transactions/' exact render={(props) => (
-            <TransactionFeature/>
-          )}/>
-
-          <Route path='/mailchimp' exact render={(props) => (
-            <MailchimpFeature/>
           )}/>
 
           <Route path='/users' exact render={(props) => (

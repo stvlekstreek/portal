@@ -113,15 +113,6 @@ class AppDrawer extends React.Component {
 
         <List>
 
-          <div>
-            <ListItem button component="a" href="#/dashboard">
-              <ListItemIcon>
-                <DashboardIcon/>
-              </ListItemIcon>
-              <ListItemText primary="Dashboard"/>
-            </ListItem>
-          </div>
-
           <AuthorityUtil has="MemberAuthority.READ">
             <div>
               <ListItem button component="a" href="#/members">
@@ -129,38 +120,6 @@ class AppDrawer extends React.Component {
                   <MemberIcon/>
                 </ListItemIcon>
                 <ListItemText primary="Member"/>
-              </ListItem>
-            </div>
-          </AuthorityUtil>
-
-          <AuthorityUtil has="DonationsAuthority.READ">
-            <div>
-              <ListItem button component="a" href="#/donations">
-                <ListItemIcon>
-                  <DonationIcon/>
-                </ListItemIcon>
-                <ListItemText primary="Donations"/>
-              </ListItem>
-            </div>
-          </AuthorityUtil>
-          <AuthorityUtil has="DonationsAuthority.READ">
-            <div>
-              <ListItem button component="a" href="#/transactions">
-                <ListItemIcon>
-                  <SepaIcon/>
-                </ListItemIcon>
-                <ListItemText primary="Sepa transactions"/>
-              </ListItem>
-            </div>
-          </AuthorityUtil>
-
-          <AuthorityUtil has="DonationsAuthority.READ">
-            <div>
-              <ListItem button component="a" href="#/mailchimp">
-                <ListItemIcon>
-                  <MailIcon/>
-                </ListItemIcon>
-                <ListItemText primary="Mailchimp"/>
               </ListItem>
             </div>
           </AuthorityUtil>
