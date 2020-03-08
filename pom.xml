@@ -36,7 +36,7 @@
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-gcp-starter-sql-mysql</artifactId>
+            <artifactId>spring-cloud-gcp-starter-sql-postgresql</artifactId>
         </dependency>
 
         <!-- Kotlin -->
@@ -178,7 +178,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>community.flock.eco.fundraising.ApplicationKt</mainClass>
+                    <mainClass>nl.stvlekstreek.portal.ApplicationKt</mainClass>
                 </configuration>
             </plugin>
 
