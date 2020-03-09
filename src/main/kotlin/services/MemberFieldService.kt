@@ -16,6 +16,7 @@ class MemberFieldService(
     enum class MemberFields(val label: String, val type: MemberFieldType, val disabled: Boolean = false, val options: SortedSet<String> = sortedSetOf()) {
         COMPETITION_NUMBER("Competition number", MemberFieldType.TEXT),
         LICENSE_NUMBER("License number", MemberFieldType.TEXT),
+        SUBSCRIPTION_NUMBER("Abonnement kaartnummer", MemberFieldType.TEXT),
         SPEEDSKATING_RESULTS_ID("Speedskating results id", MemberFieldType.TEXT),
     }
 

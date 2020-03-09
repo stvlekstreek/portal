@@ -42,12 +42,6 @@ class AppSettings extends React.Component {
                 </Link>
               </ListItem>
 
-              <ListItem button>
-                <Link to={`/settings/system_configuration`}>
-                  <ListItemText primary="System configuration"/>
-                </Link>
-              </ListItem>
-
             </List>
           </Paper>
         </Grid>

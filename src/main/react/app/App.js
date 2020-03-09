@@ -15,6 +15,7 @@ import AuthorityUtil from '../utils/AuthorityUtil'
 import {createMuiTheme} from '@material-ui/core/styles';
 
 import purple from '@material-ui/core/colors/purple';
+import {UserProfileFeature} from "@flock-eco/feature-user/src/main/react/user_profile/UserProfileFeature";
 
 class App extends React.Component {
 
@@ -25,8 +26,8 @@ class App extends React.Component {
   get theme() {
     return createMuiTheme({
       palette: {
-        primary: purple,
-        secondary: {
+
+      primary: {
           main: '#1b3380',
         },
       },
@@ -76,6 +77,10 @@ class App extends React.Component {
 
           <Route path='/settings' render={(props) => (
             <AppSettings/>
+          )}/>
+
+          <Route path='/profile' render={(props) => (
+            <UserProfileFeature/>
           )}/>
 
         </AppLayout>

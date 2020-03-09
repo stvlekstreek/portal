@@ -57,17 +57,6 @@ const styles = theme => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
-  drawerPaperClose: {
-    overflowX: 'hidden',
-    transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    width: theme.spacing(7),
-    [theme.breakpoints.up('sm')]: {
-      width: theme.spacing(9),
-    },
-  },
   toolbar: {
     display: 'flex',
     alignItems: 'center',
@@ -109,11 +98,6 @@ class AppLayout extends React.Component {
       this.setState({open: false});
     };
 
-    this.handleInfoOpen = () => {
-      const website = 'https://willemveelenturf.wixsite.com/doneasy';
-      window.open(website + location.hash.substring(1), "_blank")
-    }
-
   }
 
 
@@ -141,16 +125,6 @@ class AppLayout extends React.Component {
               <Typography variant="h6" color="inherit" noWrap className={classes.grow}>
                 {this.props.title || "App name"}
               </Typography>
-
-
-              <Button
-                color="inherit"
-                aria-label="Open drawer"
-                onClick={this.handleInfoOpen}
-                className={classNames(classes.menuButton, this.state.open && classes.hide)}
-              >
-                <InfoIcon/>
-              </Button>
 
             </Toolbar>
           </AppBar>
