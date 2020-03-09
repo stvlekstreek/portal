@@ -27,7 +27,7 @@ class App extends React.Component {
       palette: {
         primary: purple,
         secondary: {
-          main: '#f44336',
+          main: '#1b3380',
         },
       },
       typography: {
