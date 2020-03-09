@@ -42,16 +42,13 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
 
                 .antMatchers("/configuration").permitAll()
                 .antMatchers("/login").permitAll()
+                .antMatchers("/login/**").permitAll()
                 .antMatchers("/_ah/**").permitAll()
+
                 .antMatchers("/h2-console/**").permitAll()
                 .antMatchers("/actuator/**").permitAll()
 
                 .antMatchers(HttpMethod.GET, "/tasks/**").permitAll()
-                .antMatchers(HttpMethod.GET, "/api/donations/donate").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/donations/donate").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/payment/buckaroo/**").permitAll()
-                .antMatchers(HttpMethod.GET, "/api/mailchimp/webhook").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/mailchimp/webhook").permitAll()
                 .anyRequest().authenticated()
 
         http

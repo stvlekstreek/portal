@@ -37,7 +37,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/configuration')
+    fetch('/login/status')
       .then(res => res.json())
       .then(json => {
         if (!json.loggedIn) {

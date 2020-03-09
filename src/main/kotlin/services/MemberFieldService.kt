@@ -6,6 +6,7 @@ import community.flock.eco.feature.member.model.MemberFieldType
 import community.flock.eco.feature.member.repositories.MemberFieldRepository
 import org.springframework.stereotype.Service
 import java.util.*
+import javax.annotation.PostConstruct
 
 @Service
 class MemberFieldService(
@@ -18,6 +19,7 @@ class MemberFieldService(
         SPEEDSKATING_RESULTS_ID("Speedskating results id", MemberFieldType.TEXT),
     }
 
+    @PostConstruct
     fun init() {
         MemberFields.values()
                 .filter { !memberFieldRepository.findByName(it.key()).isPresent }
