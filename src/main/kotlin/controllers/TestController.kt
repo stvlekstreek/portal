@@ -14,7 +14,7 @@ private fun personalRecordsClient(id: Int) = WebClient
         .bodyToMono(JsonNode::class.java)
 
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/api/test")
 class TestController() {
 
     @GetMapping("/personal_records")
